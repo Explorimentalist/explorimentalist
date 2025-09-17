@@ -58,16 +58,44 @@ explorimentalist/
 - Accents: Orange (#FF522A), Green (#2BB673), Purple (#8642F4)
 - Glassmorphism: Various rgba values for transparency effects
 
-**Typography:**
-- Primary: Inter font family
+**Typography System (ShadCN-based):**
+- Body Text: Inter font family (via --font-geist variable)
+- Headings: Mori font family (WOFF2 optimized from Pangram Pangram)
+- System follows ShadCN typography principles with semantic classes
 - Brutalist scale: display (8rem), massive (6rem), huge (4rem)
-- Weights: black (900), extrabold (800), bold (700)
+- Available weights: Extralight (200), Regular (400), SemiBold (600)
 
 **Key Tailwind Classes:**
+
+*Glassmorphism & Design:*
 - `.glass-card` - Primary glassmorphism card style
 - `.glass-nav` - Navigation glassmorphism effect
 - `.brutalist-shadow` - Sharp drop shadows
 - `.accent-orange/green/purple` - Accent color utilities
+
+*ShadCN Typography Classes:*
+- `.typography-h1` - Large heading (Mori)
+- `.typography-h2` - Section heading with border (Mori)
+- `.typography-h3` - Subsection heading (Mori)
+- `.typography-h4` - Small heading (Mori)
+- `.typography-p` - Paragraph text (Inter)
+- `.typography-lead` - Lead paragraph
+- `.typography-large` - Large text
+- `.typography-small` - Small text
+- `.typography-muted` - Muted text
+- `.typography-blockquote` - Blockquote styling
+- `.typography-list` - List styling
+- `.typography-inline-code` - Inline code
+
+*Font Families:*
+- `font-heading` - Mori font for headings
+- `font-body` - Inter font for body text
+
+*Brutalist Variations:*
+- `.text-brutalist` - Mori semibold with brutalist styling
+- `.text-heading-light` - Mori extralight (200)
+- `.text-heading-semibold` - Mori semibold (600)
+- `.glass-text` - White text with drop shadow
 
 ### Content Management
 

@@ -58,25 +58,164 @@
   }
 }
 
-/* Custom styles for The Explorimentalist */
+/* Typography Base Styles */
 @layer base {
   html {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: var(--font-geist), system-ui, sans-serif;
   }
   
   body {
+    @apply font-body text-base leading-7;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
+  /* Heading defaults with Mori font */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-semibold tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl font-extrabold lg:text-5xl;
+  }
+
+  h2 {
+    @apply text-3xl font-semibold first:mt-0;
+  }
+
+  h3 {
+    @apply text-2xl font-semibold;
+  }
+
+  h4 {
+    @apply text-xl font-semibold;
+  }
+
+  /* Paragraph styles */
+  p {
+    @apply leading-7 [&:not(:first-child)]:mt-6;
+  }
+
+  /* Link styles */
+  a {
+    @apply font-medium underline underline-offset-4;
+  }
+
+  /* List styles */
+  ul, ol {
+    @apply my-6 ml-6 list-disc [&>li]:mt-2;
+  }
+
+  ol {
+    @apply list-decimal;
+  }
+
+  /* Code styles */
+  code {
+    @apply relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold;
+  }
+
+  /* Table styles */
+  table {
+    @apply w-full;
+  }
+
+  table th {
+    @apply border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right;
+  }
+
+  table td {
+    @apply border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right;
+  }
+
+  /* Blockquote styles */
+  blockquote {
+    @apply mt-6 border-l-2 pl-6 italic;
+  }
 }
 
-/* Brutalist typography utilities */
+/* ShadCN Typography Utilities */
 @layer utilities {
+  /* Typography variants */
+  .typography-h1 {
+    @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl;
+  }
+
+  .typography-h2 {
+    @apply scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0;
+  }
+
+  .typography-h3 {
+    @apply scroll-m-20 text-2xl font-semibold tracking-tight;
+  }
+
+  .typography-h4 {
+    @apply scroll-m-20 text-xl font-semibold tracking-tight;
+  }
+
+  .typography-p {
+    @apply leading-7 [&:not(:first-child)]:mt-6;
+  }
+
+  .typography-blockquote {
+    @apply mt-6 border-l-2 pl-6 italic;
+  }
+
+  .typography-list {
+    @apply my-6 ml-6 list-disc [&>li]:mt-2;
+  }
+
+  .typography-inline-code {
+    @apply relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold;
+  }
+
+  .typography-lead {
+    @apply text-xl text-muted-foreground;
+  }
+
+  .typography-large {
+    @apply text-lg font-semibold;
+  }
+
+  .typography-small {
+    @apply text-sm font-medium leading-none;
+  }
+
+  .typography-muted {
+    @apply text-sm text-muted-foreground;
+  }
+
+  /* Brutalist variations */
   .text-brutalist {
-    @apply font-black tracking-tighter leading-none uppercase;
+    @apply font-heading font-semibold tracking-tighter leading-none uppercase;
+  }
+  
+  .text-heading {
+    @apply font-heading font-normal;
+  }
+  
+  .text-heading-light {
+    @apply font-heading font-extralight;
+  }
+  
+  .text-heading-semibold {
+    @apply font-heading font-semibold;
+  }
+  
+  .text-heading-bold {
+    @apply font-heading font-semibold;
   }
   
   .glass-text {
     @apply text-white drop-shadow-lg;
+  }
+
+  /* Font family utilities */
+  .font-heading {
+    font-family: var(--font-mori), var(--font-geist), system-ui, sans-serif;
+  }
+
+  .font-body {
+    font-family: var(--font-geist), system-ui, sans-serif;
   }
 }

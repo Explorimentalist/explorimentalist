@@ -106,6 +106,7 @@ const config: Config = {
       },
       
       fontWeight: {
+        'extralight': '200',
         'black': '900',
         'extrabold': '800',
       },
@@ -193,10 +194,12 @@ const config: Config = {
         "glass-shimmer": "glass-shimmer 2s ease-in-out infinite",
       },
 
-      // Typography Improvements
+      // Typography System
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-geist)', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+        heading: ['var(--font-mori)', 'var(--font-geist)', 'system-ui', 'sans-serif'],
+        body: ['var(--font-geist)', 'system-ui', 'sans-serif'],
       },
 
       // Spacing Scale Extensions
