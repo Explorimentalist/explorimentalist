@@ -1,11 +1,16 @@
+import { Suspense } from 'react'
 import { HeroSection, DEFAULT_HERO_CONTENT } from '@/components/hero/hero-section'
 import { TypographyDemo } from '@/components/typography-demo'
+import { FilterSection } from '@/components/filters/filter-section'
+import { demoPosts } from '@/lib/posts'
 
 export default function Home() {
   return (
     <>
       <HeroSection {...DEFAULT_HERO_CONTENT} />
-
+      <Suspense fallback={<div>Loading filters...</div>}>
+        <FilterSection posts={demoPosts} />
+      </Suspense>
       <section id="main-content" className="bg-white">
         <div className="container mx-auto px-4 py-16">
           <h1 className="mb-8 text-massive leading-none tracking-tighter text-black">

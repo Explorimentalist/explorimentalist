@@ -28,7 +28,7 @@ export function HeroSection({
 
             <h1
               id="hero-heading"
-              className="w-full max-w-[min(90vw,1400px)] text-center font-heading text-[clamp(3.5rem,6vw,7.5rem)] font-black uppercase leading-[0.78] tracking-tight lg:whitespace-nowrap"
+              className="w-full max-w-[min(90vw,1440px)] text-center font-heading text-[clamp(3.5rem,6vw,8rem)] font-black uppercase leading-[0.78] tracking-tight lg:whitespace-nowrap"
             >
               {headline}
             </h1>

@@ -218,4 +218,27 @@
   .font-body {
     font-family: var(--font-geist), system-ui, sans-serif;
   }
+
+  /* Glassmorphism Effects */
+  .glass-nav {
+    @apply bg-white/80 backdrop-blur-md border-b border-black/10;
+  }
+
+  .glass-overlay {
+    @apply bg-black/20 backdrop-blur-sm;
+  }
+
+  /* Shadow Effects */
+  .shadow-glass {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  .shadow-brutal-sm {
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 1);
+  }
+
+  /* Z-index utilities */
+  .z-60 {
+    z-index: 60;
+  }
 }
