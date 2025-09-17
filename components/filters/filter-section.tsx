@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import type { Route } from 'next'
 
@@ -59,6 +59,9 @@ export function FilterSection({ posts }: FilterSectionProps) {
   )
   const [year, setYear] = useState(initialYear)
   const [isDebouncing, setIsDebouncing] = useState(false)
+  const [isSearchActive, setIsSearchActive] = useState(false)
+
+  const commandRef = useRef<HTMLDivElement | null>(null)
 
   const years = useMemo(() => {
     const uniqueYears = new Set<string>()
@@ -178,6 +181,7 @@ export function FilterSection({ posts }: FilterSectionProps) {
             </label>
             <Command
               shouldFilter={false}
+              ref={commandRef}
               className="border-4 border-black bg-white text-black shadow-[8px_8px_0_0_rgba(0,0,0,1)]"
             >
               <div className="border-b-4 border-black bg-white">
@@ -192,6 +196,15 @@ export function FilterSection({ posts }: FilterSectionProps) {
                       (event.target as HTMLInputElement).blur()
                       setSearchTerm('')
                     }
+                  }}
+                  onFocus={() => setIsSearchActive(true)}
+                  onBlur={() => {
+                    window.requestAnimationFrame(() => {
+                      if (!commandRef.current) return
+                      if (!commandRef.current.contains(document.activeElement)) {
+                        setIsSearchActive(false)
+                      }
+                    })
                   }}
                   className="min-h-[56px]"
                 >
@@ -211,7 +224,15 @@ export function FilterSection({ posts }: FilterSectionProps) {
                   <X className="h-5 w-5" aria-hidden="true" />
                 </button>
               </div>
-              <CommandList className="absolute left-0 right-0 top-full z-50 mt-3 border-4 border-black bg-white shadow-[8px_8px_0_0_rgba(0,0,0,1)]">
+              <CommandList
+                aria-hidden={!(isSearchActive || Boolean(searchTerm) || isDebouncing)}
+                className={cn(
+                  'absolute left-0 right-0 top-full z-50 mt-3 max-h-72 border-4 border-black bg-white shadow-[8px_8px_0_0_rgba(0,0,0,1)] transition-opacity duration-150',
+                  isSearchActive || searchTerm || isDebouncing
+                    ? 'pointer-events-auto opacity-100'
+                    : 'pointer-events-none opacity-0'
+                )}
+              >
                 {isDebouncing ? (
                   <div className="border-b-4 border-black bg-white px-4 py-4 text-sm font-black uppercase tracking-[0.3em] text-black">
                     Refining…
@@ -222,7 +243,10 @@ export function FilterSection({ posts }: FilterSectionProps) {
                       <CommandItem
                         key={post.slug}
                         value={`${post.title} ${post.category}`}
-                        onSelect={() => setSearchTerm(post.title)}
+                        onSelect={() => {
+                          setSearchTerm(post.title)
+                          setIsSearchActive(false)
+                        }}
                       >
                         <span className="inline-flex h-2 w-2 bg-red-500" aria-hidden="true" />
                         <div className="flex flex-col gap-1">
