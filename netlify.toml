@@ -7,9 +7,11 @@
   
   # Environment variables
   [build.environment]
-    NODE_VERSION = "18"
+    NODE_VERSION = "18.18.0"
     NPM_VERSION = "9"
     NEXT_TELEMETRY_DISABLED = "1"
+    # Force modern build environment
+    NETLIFY_USE_YARN = "false"
 
 # Build hooks for different branches
 [context.production]
