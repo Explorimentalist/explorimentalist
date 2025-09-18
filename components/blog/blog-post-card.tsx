@@ -57,7 +57,7 @@ export function BlogPostCard({
     >
       <Card
         className={cn(
-          'group relative flex h-full w-full max-w-2xl flex-col overflow-hidden rounded-[24px] border-0 bg-transparent bg-[radial-gradient(100%_100%_at_50%_0%,rgba(255,82,42,0.24)_0%,rgba(255,255,255,0.24)_100%)] p-6 text-black shadow-none backdrop-blur-[20px] transition-all duration-500 focus-within:ring-4 focus-within:ring-[#FF522A] focus-within:ring-offset-4 focus-within:ring-offset-white hover:scale-[1.02] hover:shadow-[0_30px_60px_rgba(0,0,0,0.18)] sm:p-10 lg:p-14',
+          'group relative flex h-full w-full max-w-2xl flex-col overflow-hidden rounded-[24px] border-0 !bg-transparent bg-[radial-gradient(100%_100%_at_50%_0%,rgba(255,82,42,0.24)_0%,rgba(255,255,255,0.24)_100%)] p-6 text-black shadow-none backdrop-blur-[20px] transition-all duration-500 focus-within:ring-4 focus-within:ring-[#FF522A] focus-within:ring-offset-4 focus-within:ring-offset-white hover:scale-[1.02] hover:shadow-[0_30px_60px_rgba(0,0,0,0.18)] sm:p-10 lg:p-14',
           'min-h-[32rem] lg:min-h-[40rem]'
         )}
       >
@@ -96,7 +96,7 @@ export function BlogPostCard({
             >
               {href ? (
                 <Link
-                  href={href}
+                  href={href as any}
                   className="no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black/80"
                 >
                   {post.title}
