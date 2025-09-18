@@ -24,7 +24,7 @@ const CommandInput = React.forwardRef<
     <CommandPrimitive.Input
       ref={ref}
       className={cn(
-        'flex-1 bg-transparent py-3 text-base font-black uppercase tracking-wide text-black outline-none placeholder:text-gray-500 md:py-4 md:text-lg',
+        'flex-1 bg-transparent py-3 text-base font-medium uppercase tracking-wide text-black outline-none placeholder:text-gray-500 md:py-4 md:text-lg',
         className
       )}
       {...props}
@@ -51,7 +51,7 @@ const CommandEmpty = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <CommandPrimitive.Empty
     ref={ref}
-    className={cn('px-4 py-6 text-sm font-semibold uppercase tracking-[0.2em] text-gray-600', className)}
+    className={cn('px-4 py-6 text-sm font-medium uppercase tracking-[0.2em] text-gray-600', className)}
     {...props}
   />
 ))
@@ -64,7 +64,7 @@ const CommandGroup = React.forwardRef<
   <CommandPrimitive.Group
     ref={ref}
     className={cn(
-      'border-t-4 border-black bg-white px-4 py-2 text-xs font-black uppercase tracking-[0.3em] first:border-t-0',
+      'border-t-2 border-black bg-white px-4 py-2 text-xs font-medium uppercase tracking-[0.3em] first:border-t-0',
       className
     )}
     {...props}
@@ -79,7 +79,7 @@ const CommandItem = React.forwardRef<
   <CommandPrimitive.Item
     ref={ref}
     className={cn(
-      'flex cursor-pointer items-center gap-3 border-b-4 border-black px-4 py-3 text-left text-sm font-bold uppercase tracking-[0.2em] transition-colors duration-150 last:border-b-0 data-[selected=true]:bg-black data-[selected=true]:text-white data-[state=selected]:bg-black data-[state=selected]:text-white data-[state=checked]:bg-black data-[state=checked]:text-white hover:bg-gray-200',
+      'flex cursor-pointer items-center gap-3 border-b-2 border-black px-4 py-3 text-left text-sm font-medium uppercase tracking-[0.2em] transition-colors duration-150 last:border-b-0 data-[selected=true]:bg-black data-[selected=true]:text-white data-[state=selected]:bg-black data-[state=selected]:text-white data-[state=checked]:bg-black data-[state=checked]:text-white hover:bg-gray-200',
       className
     )}
     {...props}
@@ -93,7 +93,7 @@ const CommandSeparator = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <CommandPrimitive.Separator
     ref={ref}
-    className={cn('my-2 h-0 border-b-4 border-black', className)}
+    className={cn('my-2 h-0 border-b-2 border-black', className)}
     {...props}
   />
 ))

@@ -67,7 +67,7 @@ export function NavigationBar({
               href="/"
               className="inline-flex text-sm uppercase tracking-tight no-underline"
             >
-              <span className="font-black text-lg sm:text-xl">{logoLabel}</span>
+              <span className="font-medium text-lg sm:text-xl">{logoLabel}</span>
             </Link>
           </div>
 
@@ -79,7 +79,7 @@ export function NavigationBar({
                   key={item.href}
                   href={item.href as any}
                   className={cn(
-                    'group relative inline-flex items-center overflow-hidden px-3 py-2 text-sm font-black uppercase tracking-tight transition-all duration-300 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black no-underline',
+                    'group relative inline-flex items-center overflow-hidden px-3 py-2 text-sm font-medium uppercase tracking-tight transition-all duration-300 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black no-underline',
                     'after:absolute after:bottom-0 after:left-0 after:h-full after:w-full after:origin-bottom after:scale-y-0 after:bg-black after:transition-transform after:duration-300 after:ease-in-out after:content-[""]',
                     isActive
                       ? 'text-white after:scale-y-100'
@@ -101,7 +101,7 @@ export function NavigationBar({
                   key={action.href}
                   href={action.href as any}
                   className={cn(
-                    'relative inline-flex items-center justify-center px-4 py-2 text-sm font-black uppercase tracking-tight shadow-brutal-sm transition-all duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black no-underline',
+                    'relative inline-flex items-center justify-center px-4 py-2 text-sm font-medium uppercase tracking-tight shadow-brutal-sm transition-all duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black no-underline',
                     isSolid
                       ? 'border border-black bg-black text-white hover:bg-white hover:text-black'
                       : 'border border-black bg-white text-black hover:bg-black hover:text-white'
@@ -183,7 +183,7 @@ export function NavigationBar({
           <div className="flex items-center justify-between">
             <Link
               href="/"
-              className="text-base font-black uppercase tracking-tight no-underline"
+              className="text-base font-medium uppercase tracking-tight no-underline"
               onClick={() => setIsMenuOpen(false)}
             >
               {logoLabel}
@@ -219,7 +219,7 @@ export function NavigationBar({
                   key={item.href}
                   href={item.href as any}
                   className={cn(
-                    'group relative flex items-center justify-between rounded-lg border border-black bg-white px-4 py-4 text-base font-black uppercase tracking-tight shadow-brutal-sm transition-colors duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black no-underline',
+                    'group relative flex items-center justify-between rounded-lg border border-black bg-white px-4 py-4 text-base font-medium uppercase tracking-tight shadow-brutal-sm transition-colors duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black no-underline',
                     isActive ? 'text-black' : 'text-black hover:bg-black hover:text-white'
                   )}
                   onClick={() => setIsMenuOpen(false)}
@@ -240,7 +240,7 @@ export function NavigationBar({
                   key={action.href}
                   href={action.href as any}
                   className={cn(
-                    'inline-flex items-center justify-center px-4 py-3 text-sm font-black uppercase tracking-tight shadow-brutal-sm transition-all duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black no-underline',
+                    'inline-flex items-center justify-center px-4 py-3 text-sm font-medium uppercase tracking-tight shadow-brutal-sm transition-all duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black no-underline',
                     isSolid
                       ? 'border border-black bg-black text-white hover:bg-white hover:text-black'
                       : 'border border-black bg-white text-black hover:bg-black hover:text-white'

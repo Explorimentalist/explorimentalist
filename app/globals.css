@@ -136,6 +136,14 @@
 
 /* ShadCN Typography Utilities */
 @layer utilities {
+  /* Minimal line clamp utility until plugin is added */
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
   /* Typography variants */
   .typography-h1 {
     @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl;

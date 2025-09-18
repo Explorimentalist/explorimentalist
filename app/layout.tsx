@@ -46,7 +46,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} ${inter.variable} ${mori.variable} bg-gray-50 text-gray-900`}>
         <NavigationBar />
-        <main className="pt-24">{children}</main>
+        <main>{children}</main>
       </body>
     </html>
   )
