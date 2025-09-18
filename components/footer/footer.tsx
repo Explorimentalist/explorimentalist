@@ -112,7 +112,7 @@ export function Footer({
               {socialLinks.map((social) => (
                 <Link
                   key={social.href}
-                  href={social.href}
+                  href={social.href as any}
                   className="group inline-flex h-10 w-10 items-center justify-center rounded-lg border border-black/20 bg-white/60 shadow-brutal-sm transition-all duration-200 ease-in-out hover:bg-black hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -135,7 +135,7 @@ export function Footer({
                   {section.links.map((link) => (
                     <li key={link.href}>
                       <Link
-                        href={link.href}
+                        href={link.href as any}
                         className={cn(
                           "typography-small inline-flex items-center transition-colors duration-200 ease-in-out hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black no-underline",
                           "text-muted-foreground hover:text-foreground"
